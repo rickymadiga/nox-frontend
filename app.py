@@ -7,7 +7,7 @@ from collections import deque
 # ═════════════════════════════════════════════
 # CONFIG
 # ═════════════════════════════════════════════
-API_BASE = "http://localhost:8000/api"
+API_BASE = "https://nox-ai-fgrt.onrender.com/api"
 
 st.set_page_config(
     layout="wide", 
@@ -50,12 +50,16 @@ def get_headers():
 
 
 def api_post(endpoint, data):
-    """Make POST request to API with better token handling"""
+    """Make POST request to API"""
     try:
         headers = get_headers()
         
+        # Ensure proper URL formatting
+        clean_endpoint = endpoint if endpoint.startswith('/') else f"/{endpoint}"
+        url = f"{API_BASE.rstrip('/')}{clean_endpoint}"
+        
         response = requests.post(
-            f"{API_BASE}{endpoint}",
+            url,
             json=data,
             headers=headers,
             timeout=45
@@ -97,8 +101,12 @@ def api_post(endpoint, data):
 def api_get(endpoint):
     """Make GET request to API"""
     try:
+        # Ensure proper URL formatting
+        clean_endpoint = endpoint if endpoint.startswith('/') else f"/{endpoint}"
+        url = f"{API_BASE.rstrip('/')}{clean_endpoint}"
+
         response = requests.get(
-            f"{API_BASE}{endpoint}",
+            url,
             headers=get_headers(),
             timeout=30
         )
