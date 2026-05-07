@@ -1,0 +1,528 @@
+2026-04-20 03:55:25 - __main__ - INFO - Initializing application...
+2026-04-20 03:55:25 - __main__ - INFO - Application initialized successfully
+2026-04-20 03:57:10 - __main__ - INFO - Initializing application...
+2026-04-20 03:57:10 - __main__ - INFO - Application initialized successfully
+2026-04-20 03:59:09 - __main__ - INFO - Initializing application...
+2026-04-20 03:59:09 - __main__ - INFO - Application initialized successfully
+2026-04-20 03:59:09 - __main__ - CRITICAL - Application crashed: "AuthRequest" object has no field "client"
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 265, in handle_registration
+    api = get_api_service()
+          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 281, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 326, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 385, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 649, in get_api_service
+    return APIService(base_url=BACKEND_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 621, in __init__
+    self.auth = AuthRequest(self.client)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 310, in __init__
+    self.client = client
+    ^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1032, in __setattr__
+    elif (setattr_handler := self._setattr_handler(name, value)) is not None:
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1079, in _setattr_handler
+    raise ValueError(f'"{cls.__name__}" object has no field "{name}"')
+ValueError: "AuthRequest" object has no field "client"
+2026-04-20 03:59:18 - __main__ - INFO - Initializing application...
+2026-04-20 03:59:18 - __main__ - INFO - Application initialized successfully
+2026-04-20 03:59:29 - __main__ - INFO - Initializing application...
+2026-04-20 03:59:29 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:00:19 - __main__ - INFO - Initializing application...
+2026-04-20 04:00:19 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:00:19 - __main__ - CRITICAL - Application crashed: "AuthRequest" object has no field "client"
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 574, in main
+    show_admin_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\admin_login.py", line 40, in show_admin_login
+    handle_admin_login(username)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\admin_login.py", line 59, in handle_admin_login
+    api = get_api_service()
+          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 281, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 326, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 385, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 649, in get_api_service
+    return APIService(base_url=BACKEND_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 621, in __init__
+    self.auth = AuthRequest(self.client)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 310, in __init__
+    self.client = client
+    ^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1032, in __setattr__
+    elif (setattr_handler := self._setattr_handler(name, value)) is not None:
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1079, in _setattr_handler
+    raise ValueError(f'"{cls.__name__}" object has no field "{name}"')
+ValueError: "AuthRequest" object has no field "client"
+2026-04-20 04:00:25 - __main__ - INFO - Initializing application...
+2026-04-20 04:00:25 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:15:11 - __main__ - INFO - Initializing application...
+2026-04-20 04:15:11 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:15:20 - __main__ - INFO - Initializing application...
+2026-04-20 04:15:20 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:15:45 - __main__ - INFO - Initializing application...
+2026-04-20 04:15:45 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:15:45 - __main__ - CRITICAL - Application crashed: name 'AuthRequest' is not defined
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 574, in main
+    show_admin_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\admin_login.py", line 40, in show_admin_login
+    handle_admin_login(username)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\admin_login.py", line 59, in handle_admin_login
+    api = get_api_service()
+          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 281, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 326, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 385, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 649, in get_api_service
+    return APIService(base_url=BACKEND_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 621, in __init__
+    self.auth = AuthRequest(self.client)
+                ^^^^^^^^^^^
+NameError: name 'AuthRequest' is not defined. Did you mean: 'APIRequest'?
+2026-04-20 04:24:59 - __main__ - INFO - Initializing application...
+2026-04-20 04:25:00 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:25:12 - __main__ - INFO - Initializing application...
+2026-04-20 04:25:12 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:25:25 - __main__ - INFO - Initializing application...
+2026-04-20 04:25:25 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:26:41 - __main__ - INFO - Initializing application...
+2026-04-20 04:26:41 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:26:52 - __main__ - INFO - Initializing application...
+2026-04-20 04:26:52 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:26:52 - __main__ - INFO - Initializing application...
+2026-04-20 04:26:52 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:27:37 - __main__ - INFO - Initializing application...
+2026-04-20 04:27:37 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:27:37 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 266, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 4 were given
+2026-04-20 04:31:12 - __main__ - INFO - Initializing application...
+2026-04-20 04:31:12 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:32:06 - __main__ - INFO - Initializing application...
+2026-04-20 04:32:06 - __main__ - INFO - Application initialized successfully
+2026-04-20 04:32:06 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 6 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 266, in handle_registration
+    response = api.auth.register(username, email, password, password_confirm, agree_terms)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 6 were given
+2026-04-20 11:00:03 - __main__ - INFO - Initializing application...
+2026-04-20 11:00:04 - __main__ - INFO - Application initialized successfully
+2026-04-20 11:01:06 - __main__ - INFO - Initializing application...
+2026-04-20 11:01:06 - __main__ - INFO - Application initialized successfully
+2026-04-20 11:01:06 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 266, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 4 were given
+2026-04-20 11:31:22 - __main__ - INFO - Initializing application...
+2026-04-20 11:31:23 - __main__ - INFO - Application initialized successfully
+2026-04-20 11:31:57 - __main__ - INFO - Initializing application...
+2026-04-20 11:31:57 - __main__ - INFO - Application initialized successfully
+2026-04-20 11:31:58 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 266, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 4 were given
+2026-04-20 13:41:51 - __main__ - INFO - Initializing application...
+2026-04-20 13:41:52 - __main__ - INFO - Application initialized successfully
+2026-04-20 13:42:38 - __main__ - INFO - Initializing application...
+2026-04-20 13:42:38 - __main__ - INFO - Application initialized successfully
+2026-04-20 13:42:38 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 4 were given
+2026-04-20 13:59:36 - __main__ - INFO - Initializing application...
+2026-04-20 13:59:36 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:00:19 - __main__ - INFO - Initializing application...
+2026-04-20 14:00:19 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:00:19 - __main__ - CRITICAL - Application crashed: AuthService.register() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AuthService.register() takes 3 positional arguments but 4 were given
+2026-04-20 14:17:08 - __main__ - INFO - Initializing application...
+2026-04-20 14:17:08 - __main__ - INFO - Initializing application...
+2026-04-20 14:17:08 - __main__ - INFO - Initializing application...
+2026-04-20 14:17:08 - __main__ - INFO - Initializing application...
+2026-04-20 14:17:08 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:17:08 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:17:09 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:17:09 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:17:59 - __main__ - INFO - Initializing application...
+2026-04-20 14:17:59 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:18:40 - __main__ - INFO - Initializing application...
+2026-04-20 14:18:40 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:18:40 - __main__ - CRITICAL - Application crashed: 'AuthService' object has no attribute 'base_url'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 342, in register
+    f"{self.base_url}/auth/register",
+       ^^^^^^^^^^^^^
+AttributeError: 'AuthService' object has no attribute 'base_url'
+2026-04-20 14:28:30 - __main__ - INFO - Initializing application...
+2026-04-20 14:28:30 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:29:16 - __main__ - INFO - Initializing application...
+2026-04-20 14:29:16 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:29:16 - __main__ - CRITICAL - Application crashed: Invalid URL '<services.api.APIClient object at 0x00000002A93D6D80>/auth/register': No scheme supplied. Perhaps you meant https://<services.api.APIClient object at 0x00000002A93D6D80>/auth/register?
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_registration
+    response = api.auth.register(username, email, password)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\services\api.py", line 313, in register
+    response = self.session.post(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\models.py", line 367, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\cosmic ethic\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\models.py", line 438, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '<services.api.APIClient object at 0x00000002A93D6D80>/auth/register': No scheme supplied. Perhaps you meant https://<services.api.APIClient object at 0x00000002A93D6D80>/auth/register?
+2026-04-20 14:39:19 - __main__ - INFO - Initializing application...
+2026-04-20 14:39:20 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:40:01 - __main__ - INFO - Initializing application...
+2026-04-20 14:40:01 - __main__ - INFO - Application initialized successfully
+2026-04-20 14:40:01 - __main__ - CRITICAL - Application crashed: 'NoneType' object has no attribute 'success'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 258, in handle_registration
+    if response.success:
+       ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'success'
+2026-04-20 15:08:11 - __main__ - INFO - Initializing application...
+2026-04-20 15:08:11 - __main__ - INFO - Application initialized successfully
+2026-04-20 15:09:09 - __main__ - INFO - Initializing application...
+2026-04-20 15:09:09 - __main__ - INFO - Application initialized successfully
+2026-04-20 15:09:09 - __main__ - CRITICAL - Application crashed: 'APIResponse' object has no attribute 'message'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 265, in handle_registration
+    error_msg = response.error or response.message
+                                  ^^^^^^^^^^^^^^^^
+AttributeError: 'APIResponse' object has no attribute 'message'
+2026-04-20 15:24:52 - __main__ - INFO - Initializing application...
+2026-04-20 15:24:52 - __main__ - INFO - Application initialized successfully
+2026-04-20 15:25:32 - __main__ - INFO - Initializing application...
+2026-04-20 15:25:32 - __main__ - INFO - Application initialized successfully
+2026-04-20 15:25:32 - __main__ - CRITICAL - Application crashed: 'APIResponse' object has no attribute 'message'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 265, in handle_registration
+    error_msg = response.error or response.message
+                                  ^^^^^^^^^^^^^^^^
+AttributeError: 'APIResponse' object has no attribute 'message'
+2026-04-20 15:45:35 - __main__ - INFO - Initializing application...
+2026-04-20 15:45:36 - __main__ - INFO - Application initialized successfully
+2026-04-20 15:46:13 - __main__ - INFO - Initializing application...
+2026-04-20 15:46:13 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:00:57 - __main__ - INFO - Initializing application...
+2026-04-20 16:00:58 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:02:04 - __main__ - INFO - Initializing application...
+2026-04-20 16:02:04 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:36:11 - __main__ - INFO - Initializing application...
+2026-04-20 16:36:12 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:37:10 - __main__ - INFO - Initializing application...
+2026-04-20 16:37:10 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:41:30 - __main__ - INFO - Initializing application...
+2026-04-20 16:41:30 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:42:33 - __main__ - INFO - Initializing application...
+2026-04-20 16:42:33 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:42:33 - __main__ - CRITICAL - Application crashed: 'AuthService' object has no attribute 'signup'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_registration(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_registration
+    response = api.auth.signup(username, email, password)
+               ^^^^^^^^^^^^^^^
+AttributeError: 'AuthService' object has no attribute 'signup'
+2026-04-20 16:53:01 - __main__ - INFO - Initializing application...
+2026-04-20 16:53:01 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:53:40 - __main__ - INFO - Initializing application...
+2026-04-20 16:53:40 - __main__ - INFO - Application initialized successfully
+2026-04-20 16:53:40 - __main__ - CRITICAL - Application crashed: 'AuthService' object has no attribute 'signup'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 38, in show_login
+    show_registration_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 137, in show_registration_form
+    handle_signup(username, email, password, password_confirm, agree_terms)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 256, in handle_signup
+    response = api.auth.signup(username, email, password)
+               ^^^^^^^^^^^^^^^
+AttributeError: 'AuthService' object has no attribute 'signup'
+2026-04-20 17:13:18 - __main__ - INFO - Initializing application...
+2026-04-20 17:13:19 - __main__ - INFO - Application initialized successfully
+2026-04-20 17:13:55 - __main__ - INFO - Initializing application...
+2026-04-20 17:13:55 - __main__ - INFO - Application initialized successfully
+2026-04-20 17:32:24 - __main__ - INFO - Initializing application...
+2026-04-20 17:32:24 - __main__ - INFO - Application initialized successfully
+2026-04-20 17:33:01 - __main__ - INFO - Initializing application...
+2026-04-20 17:33:01 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:13:21 - __main__ - INFO - Initializing application...
+2026-04-20 18:13:22 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:13:58 - __main__ - INFO - Initializing application...
+2026-04-20 18:13:58 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:23:39 - __main__ - INFO - Initializing application...
+2026-04-20 18:23:39 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:24:42 - __main__ - INFO - Initializing application...
+2026-04-20 18:24:42 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:43:07 - __main__ - INFO - Initializing application...
+2026-04-20 18:43:07 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:43:51 - __main__ - INFO - Initializing application...
+2026-04-20 18:43:51 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:49:02 - __main__ - INFO - Initializing application...
+2026-04-20 18:49:03 - __main__ - INFO - Application initialized successfully
+2026-04-20 18:50:33 - __main__ - INFO - Initializing application...
+2026-04-20 18:50:33 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:00:43 - __main__ - INFO - Initializing application...
+2026-04-20 19:00:44 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:01:41 - __main__ - INFO - Initializing application...
+2026-04-20 19:01:41 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:11:15 - __main__ - INFO - Initializing application...
+2026-04-20 19:11:16 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:11:57 - __main__ - INFO - Initializing application...
+2026-04-20 19:11:57 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:22:51 - __main__ - INFO - Initializing application...
+2026-04-20 19:22:51 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:24:12 - __main__ - INFO - Initializing application...
+2026-04-20 19:24:12 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:31:38 - __main__ - INFO - Initializing application...
+2026-04-20 19:31:39 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:32:27 - __main__ - INFO - Initializing application...
+2026-04-20 19:32:27 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:57:20 - __main__ - INFO - Initializing application...
+2026-04-20 19:57:21 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:58:49 - __main__ - INFO - Initializing application...
+2026-04-20 19:58:49 - __main__ - INFO - Application initialized successfully
+2026-04-20 19:58:52 - __main__ - INFO - Initializing application...
+2026-04-20 19:58:52 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:00:10 - __main__ - INFO - Initializing application...
+2026-04-20 20:00:10 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:00:10 - __main__ - CRITICAL - Application crashed: 'AuthService' object has no attribute 'verify_token'
+Traceback (most recent call last):
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 609, in <module>
+    main()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 579, in main
+    if not check_authentication():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\app.py", line 412, in check_authentication
+    show_login()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 35, in show_login
+    show_login_form()
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 84, in show_login_form
+    handle_login(username, password, remember_me)
+  File "C:\Users\cosmic ethic\Desktop\NOX_DEV\nox_ai\ui\components\auth\login.py", line 202, in handle_login
+    verify_response = api.auth.verify_token()
+                      ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AuthService' object has no attribute 'verify_token'
+2026-04-20 20:19:54 - __main__ - INFO - Initializing application...
+2026-04-20 20:19:55 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:20:30 - __main__ - INFO - Initializing application...
+2026-04-20 20:20:30 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:20:31 - __main__ - INFO - Initializing application...
+2026-04-20 20:20:31 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:21:15 - __main__ - INFO - Initializing application...
+2026-04-20 20:21:15 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:21:16 - __main__ - INFO - Initializing application...
+2026-04-20 20:21:16 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:21:27 - __main__ - INFO - Initializing application...
+2026-04-20 20:21:27 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:21:40 - __main__ - INFO - Initializing application...
+2026-04-20 20:21:40 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:21:41 - __main__ - INFO - Initializing application...
+2026-04-20 20:21:41 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:22:09 - __main__ - INFO - Initializing application...
+2026-04-20 20:22:09 - __main__ - INFO - Application initialized successfully
+2026-04-20 20:22:11 - __main__ - INFO - Initializing application...
+2026-04-20 20:22:11 - __main__ - INFO - Application initialized successfully
