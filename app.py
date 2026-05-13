@@ -7,12 +7,13 @@ from collections import deque
 # ═════════════════════════════════════════════
 # CONFIG
 # ═════════════════════════════════════════════
-API_BASE = "https://nox-ai-fgrt.onrender.com/api"
+API_BASE = "http://localhost:8000/api"
 
 st.set_page_config(
     layout="wide", 
     page_title="NOX Workspace",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    menu_items={}  # Clean header
 )
 
 # ═════════════════════════════════════════════
@@ -119,6 +120,15 @@ def api_get(endpoint):
         st.error(f"❌ Error: {str(e)}")
         return None
 
+def get_action_icon(action: str):
+    icons = {
+        "build": "📦",
+        "debug": "🔧",
+        "research": "🔬",
+        "content": "🎨",
+        "chat": "💬"
+    }
+    return icons.get(action, "💬")
 
 # ═════════════════════════════════════════════
 # AUTH SECTION
@@ -233,7 +243,7 @@ def show_landing_page():
     st.caption("Login to start building with AI agents")
 
 def show_chat_page():
-    """Chat page - Clean & Fixed Version"""
+    """Chat page - Clean & Fixed Version with Full Messaging + Image Support"""
     st.title("⚡ NOX Workspace - Chat")
 
     # Mobile-friendly styling
@@ -246,100 +256,114 @@ def show_chat_page():
         </style>
     """, unsafe_allow_html=True)
 
-    # Initialize toggle state
     if "show_logs" not in st.session_state:
         st.session_state.show_logs = True
 
-    # ───── LAYOUT ─────
+    # Layout
     if st.session_state.show_logs:
         col_chat, col_logs = st.columns([4, 1], gap="medium")
     else:
         col_chat = st.container()
         col_logs = None
 
-    # ==================== LIVE LOGS (Right Sidebar) ====================
+    # Live Logs Sidebar
     if col_logs:
         with col_logs:
             st.subheader("📊 Live Activity")
-            
             log_container = st.container(border=True, height=520)
             with log_container:
-                if st.session_state.live_logs:
-                    for log in list(st.session_state.live_logs)[-15:]:
-                        log_text = log.get("message", str(log)) if isinstance(log, dict) else str(log)
-                        if "error" in log_text.lower() or "❌" in log_text:
-                            st.error(log_text)
-                        elif "warning" in log_text.lower() or "⚠️" in log_text:
-                            st.warning(log_text)
-                        elif "success" in log_text.lower() or "✅" in log_text:
-                            st.success(log_text)
-                        else:
-                            st.text(log_text)
-                else:
-                    st.info("💤 No activity yet...")
+                for log in list(st.session_state.live_logs)[-15:]:
+                    log_text = log.get("message", str(log)) if isinstance(log, dict) else str(log)
+                    if "error" in log_text.lower() or "❌" in log_text:
+                        st.error(log_text)
+                    elif "⚠️" in log_text:
+                        st.warning(log_text)
+                    elif "✅" in log_text:
+                        st.success(log_text)
+                    else:
+                        st.text(log_text)
 
             if st.button("🗑️ Clear Logs", width="stretch"):
                 st.session_state.live_logs.clear()
                 st.rerun()
 
-    # ==================== CHAT AREA ====================
+    # Chat Area
     with (col_chat if col_logs else st.container()):
         st.subheader("💬 Conversation")
 
-        # Define render_response BEFORE using it
         def render_response(res):
-            """Render API response"""
+            """Final Fixed Render - Image + Video Support"""
             if not res:
                 st.error("❌ Invalid response")
                 return
 
             action = (res.get("action") or res.get("type") or "chat").lower().strip()
-            response_type = res.get("type", "message")
+            response_text = res.get("response") or res.get("message") or "No response received."
 
-            if res.get("zip"):
-                action = "build"
-
-            icons = {"chat": "💬", "build": "📦", "debug": "🔧", 
-                    "research": "🔬", "content_generator": "🎨"}
+            icons = {
+                "build": "📦", "debug": "🔧", "research": "🔬", 
+                "content_generation": "🎨", "content": "🎨", "chat": "💬"
+            }
             icon = icons.get(action, "💬")
 
             st.markdown(f"### {icon} {action.upper()}")
-
-            response_text = res.get("response") or res.get("message") or "No response text"
             st.write(response_text)
 
-            # Build Download
-            if action == "build" or res.get("zip"):
-                zip_data = res.get("zip")
-                if zip_data and isinstance(zip_data, dict) and zip_data.get("data"):
-                    try:
-                        import base64
-                        zip_bytes = base64.b64decode(zip_data.get("data", ""))
-                        st.download_button(
-                            label="⬇️ Download ZIP",
-                            data=zip_bytes,
-                            file_name=zip_data.get("filename", "nox_app.zip"),
-                            mime="application/zip",
-                            width="stretch"
-                        )
-                    except:
-                        pass
+            # ───── IMAGE HANDLING ─────
+            if action in ["content_generation", "content"] or res.get("type") == "image":
+                image_url = (
+                    res.get("image_url") or 
+                    res.get("url") or 
+                    res.get("data", {}).get("url") or 
+                    res.get("data", {}).get("image_url")
+                )
+                
+                if image_url:
+                    st.success("✅ Image Generated!")
+                    st.image(image_url, caption="Generated Image", use_container_width=True)
+                else:
+                    st.info("🖼️ Image generation completed but URL not found.")
 
-            # Price
-            if res.get("price"):
-                st.warning(f"💰 Cost: {res.get('price')} credits")
+            # ───── VIDEO HANDLING ─────
+            elif action == "video" or "video" in str(res.get("type", "")):
+                video_url = res.get("video_url") or res.get("url") or res.get("data", {}).get("video_url")
+                if video_url:
+                    st.success("🎬 Video Generation Started")
+                    st.video(video_url)
+                else:
+                    st.info("🎬 Video is being processed...")
 
-        # Render previous messages
+            # ───── ZIP HANDLING ─────
+            zip_info = res.get("zip") or (res.get("data") or {}).get("zip")
+            if zip_info and isinstance(zip_info, dict) and zip_info.get("data"):
+                try:
+                    import base64
+                    zip_bytes = base64.b64decode(zip_info.get("data", ""))
+                    filename = zip_info.get("filename", "project.zip")
+                    st.download_button(
+                        label="⬇️ Download Project ZIP",
+                        data=zip_bytes,
+                        file_name=filename,
+                        mime="application/zip",
+                        use_container_width=True,
+                        key=f"dl_{int(time.time())}"
+                    )
+                except:
+                    pass
+
+            st.divider()
+
+        # ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
+        # RENDER PREVIOUS MESSAGES (This was missing)
+        # ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
         for msg in st.session_state.messages:
             with st.chat_message("user"):
                 st.write(f"**You:** {msg['prompt']}")
-            
             with st.chat_message("assistant"):
                 render_response(msg["response"])
-            
             st.divider()
 
-        # New user input
+        # User Input
         prompt = st.chat_input("Ask NOX anything...")
 
         if prompt:
@@ -362,11 +386,9 @@ def show_chat_page():
                 else:
                     st.error("❌ Failed to get response")
 
-    # Toggle button at bottom
     if st.button("📊 Toggle Live Logs", key="toggle_logs"):
         st.session_state.show_logs = not st.session_state.show_logs
         st.rerun()
-
 
 def show_signup_page():
     """Fixed & Improved Sign Up Page"""
@@ -563,7 +585,7 @@ def show_downloads_page():
     with tab3:
         st.markdown("### ⚙️ Settings")
         st.info("⚙️ Settings coming soon")
-        
+
 # ═════════════════════════════════════════════
 # MAIN APP ROUTING (FIXED)
 # ═════════════════════════════════════════════
